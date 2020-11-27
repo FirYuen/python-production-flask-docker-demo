@@ -20,6 +20,9 @@ COPY conf/supervisord.conf /etc/supervisor/supervisord.conf
 COPY conf/supervisord_nginx.conf /etc/supervisor/conf.d/nginx.conf
 COPY conf/supervisord_gunicorn.conf /etc/supervisor/conf.d/gunicorn.conf
 
+# expose port
+EXPOSE 80
+
 COPY app/requirements.txt .
 RUN pip install -i https://mirrors.aliyun.com/pypi/simple --no-cache-dir -r /app/requirements.txt
 
